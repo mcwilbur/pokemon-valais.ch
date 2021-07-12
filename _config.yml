@@ -23,7 +23,7 @@ email: pokemon@tcg-vs.ch
 description: >- # this means to ignore newlines until "baseurl:"
   News et événements pour les joueurs & collectionneurs Pokémon du Valais
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://pokemon-valais.ch" # the base hostname & protocol for your site, e.g. http://example.com
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username: 
 show_excerpts: true
