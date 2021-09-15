@@ -29,7 +29,7 @@ github_username:
 show_excerpts: true
 
 # Build settings
-theme: jekyll-theme-slate
+# theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
 

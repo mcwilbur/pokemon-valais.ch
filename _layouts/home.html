@@ -9,6 +9,38 @@ layout: default
 
   {{ content }}
 
+  <div class="card-list">
+    <div class="card">
+      <div class="card-img">
+        <img src="https://via.placeholder.com/640x480" />
+      </div>
+      <div class="card-text">
+        <div class="card-header">
+          <div class="card-title">Title</div>
+          <div class="card-subtitle">Subtitle</div>
+        </div>
+        <div class="card-excerpt">Excerpt </div>
+        <div class="card-meta">meta</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-list">
+    <div class="card">
+      <div class="card-img">
+        <img src="https://via.placeholder.com/640x160" />
+      </div>
+      <div class="card-text">
+        <div class="card-header">
+          <div class="card-title">Title</div>
+          <div class="card-subtitle">Subtitle</div>
+        </div>
+        <div class="card-excerpt">Excerpt </div>
+        <div class="card-meta">meta</div>
+      </div>
+    </div>
+  </div>
+
   {%- if site.posts.size > 0 -%}
   <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
   <ul class="post-list">
