@@ -9,6 +9,47 @@ layout: default
 
   {{ content }}
 
+  {%- if site.posts.size > 0 -%}
+  <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+  <div class="card-list">
+    {%- for post in site.posts -%}
+    <div class="card">
+      <div class="card-img">
+        {%- if post.image -%}
+        <img src="{{- post.image | relative_url -}}" alt="">
+        {%- else -%}
+        {%- assign postImage = "/assets/images/image-default.jpg" -%}
+        <img src="{{- postImage | relative_url -}}" alt="">
+        {%- endif -%}
+      </div>
+      <div class="card-text">
+        <div class="card-header">
+          <div class="card-title">
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+          </div>
+          {%- if post.subtitle -%}
+          <div class="card-subtitle">{{ post.subtitle | escape }}</div>
+          {%- endif -%}
+        </div>
+        <div class="card-excerpt">
+          {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+          {%- endif -%}
+        </div>
+        <div class="card-meta">
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <span class="post-meta">{{ post.date | date: date_format }}</span>
+        </div>
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+  {%- endif -%}
+
   <div class="card-list">
     <div class="card">
       <div class="card-img">

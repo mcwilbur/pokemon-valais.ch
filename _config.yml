@@ -52,3 +52,10 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+future: true
+
+collections:
+  events:
+    output: true
+    permalink: /:collection/:categories/:name
