@@ -8,9 +8,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@vue/cli": "^4.5.13",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2",
+    "postcss": "^8.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

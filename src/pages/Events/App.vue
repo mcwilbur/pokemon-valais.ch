@@ -1,9 +1,30 @@
 <template>
-  <div v-if="this.loaded_events.length > 0">
+  <div class="card-list" v-if="this.loaded_events.length > 0">
+    <div class="card" v-for="(event, index) in this.loaded_events" :key="index">
+      <div class="card-img">
+        <img :src="event.image" />
+      </div>
+      <div class="card-text">
+        <div class="card-header">
+          <div class="card-title">
+            <h3>
+              <a class="post-link" :href="event.url">
+                {{ event.title }}
+              </a>
+            </h3>
+          </div>
+          <div class="card-subtitle"></div>
+        </div>
+        <div class="card-excerpt">{{event.description}}</div>
+        <div class="card-meta">{{event.date}}</div>
+      </div>
+    </div>
+  </div>
+  <!--div v-if="this.loaded_events.length > 0">
   <p v-for="(event, index) in this.loaded_events" :key="index">
     {{event}}
   </p>
-  </div>
+  </div-->
 </template>
 
 <script>
@@ -28,12 +49,4 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

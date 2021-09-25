@@ -1,15 +1,25 @@
 ---
+title: Events
 layout: default
 name: index
 ---
-
 <div class="home">
   {%- if page.title -%}
   <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
+  
   <script>
-    var events = [];
-    {% assign events = site.events | sort: 'date' %}{% for event in events %}{% unless event.name contains 'index' %}events.push({title: "{{ event.title }}",date: "{{ event.date }}"}); {% endunless %}{% endfor %}
+    var events = [];    {% assign events = site.events | sort: 'date' %}
+    {% for event in events %}
+      {% unless event.name contains 'index' %}
+        {%- assign postImage = "/assets/images/test.png" -%}
+        {%- if event.image -%}
+          {%- assign postImage = event.image -%}
+        {%- endif -%}
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        events.push({title: "{{ event.title }}",date: "{{ event.date | date: date_format}}", description: "{{ event.description }}", image: "{{ postImage }}", url: "{{ event.url | relative_url }}" });
+      {% endunless %}
+    {% endfor %}
     window.page_events = events;
   </script>
   {% include vue_pages/events.html %}

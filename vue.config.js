@@ -2,11 +2,17 @@ module.exports = {
   filenameHashing: false,
   outputDir: '_includes/vue_pages',
   assetsDir: '../../assets',
-  publicPath: '/',
+  publicPath: '',
   pages: {
     'events': {
+      bundle: 'events',
       entry: './src/pages/Events/main.js',
-      template: './src/app.html',
+      assetsPublicPath: '/assets',
+      assetsDir: '../../assets',
+      inject: false,
+      template: './src/index.ejs',
+      appMountId: 'app',
+      minify: { collapseWhitespace: false },
       title: 'Home',
       chunks: [ 'chunk-vendors', 'chunk-common', 'events' ]
     },
